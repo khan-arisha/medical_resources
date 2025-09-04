@@ -1,42 +1,251 @@
+:root {
+    --primary-blue: #0260a9;
+    --dark-blue: #2c3e50;
+    --light-gray: #f2f5fa;
+    --border-gray: #e6e9ef;
+    --light-blue-bg: #d9e6f2;
+    --share-blue: #007bff;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    line-height: 1.6;
-  }
-  
-  h1 {
-    color: #2c3e50;
-  }
-  
-  ul {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--light-gray);
+    margin: 0;
+    padding: 0;
+    color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Mobile-first approach, max width for desktop */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Header and Navigation */
+.main-header {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px 0;
+    background-color: white;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #92a3bb;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 15px 20px;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-links .active {
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+.qr-code i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+/* Controls Section */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.sort-icon i {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+}
+
+.add-condition-button {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-condition-button i {
+    margin-right: 8px;
+}
+
+.add-condition-button:hover {
+    background-color: #024b80;
+}
+
+/* Conditions List Cards */
+.conditions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.condition-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: var(--dark-blue);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: block;
+}
+
+.condition-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-left {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-right: 15px;
+}
+
+.card-left h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.update-date {
+    font-size: 0.8rem;
+    color: #92a3bb;
+    margin-top: 5px;
+}
+
+.card-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    white-space: nowrap;
+}
+
+.page-views {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    line-height: 1;
+    margin-bottom: 3px;
+}
+
+.page-views.zero {
+    color: #92a3bb;
+}
+
+.page-views-text {
+    font-size: 0.8rem;
+    color: #92a3bb;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.share-link {
+    color: var(--share-blue);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.share-link:hover {
+    text-decoration: underline;
+}
+
+/* Page Specific Styles */
+.resource-page-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.resource-page-content ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  li {
-    margin: 10px 0;
-  }
-  
-  a {
-    color: #0066cc;
+    margin-bottom: 20px;
+}
+
+.resource-page-content li {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.resource-page-content a {
+    color: var(--primary-blue);
     text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .email-button {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #28a745;
+}
+
+.email-button {
+    display: block;
+    width: 100%;
+    background-color: #28a745;
     color: white;
-    border-radius: 5px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.email-button:hover {
+    background-color: #218838;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--primary-blue);
     text-decoration: none;
     font-weight: bold;
-  }
-  
-  .email-button:hover {
-    background: #218838;
-  }
-  
+}
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.share-button {
+    font-size: 1.5rem; /* Adjust icon size as needed */
+    color: #4CAF50; /* Adjust color as needed */
+    transition: color 0.3s ease;
+}
+
+.share-button:hover {
+    color: #388E3C; /* Darker color on hover */
+}
