@@ -20,8 +20,8 @@ body {
 
 .container {
     width: 100%;
-    max-width: 600px; /* Mobile-first approach, max width for desktop */
-    padding: 20px;
+    max-width: 700px; /* Mobile-first approach, max width for desktop */
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -33,8 +33,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px 0;
-    background-color: white;
-    box-sizing: border-box;
+    background-color: #f2f5fa;
     border-bottom: 1px solid var(--border-gray);
 }
 
@@ -54,10 +53,6 @@ body {
     border-bottom: 2px solid var(--primary-blue);
 }
 
-.qr-code i {
-    font-size: 1.5rem;
-    color: var(--primary-blue);
-}
 
 /* Controls Section */
 .controls {
@@ -171,7 +166,6 @@ body {
 .share-link {
     color: var(--share-blue);
     font-size: 0.9rem;
-    margin-top: 10px;
     font-weight: 500;
     cursor: pointer;
     transition: color 0.2s;
@@ -206,33 +200,25 @@ body {
     text-decoration: none;
 }
 
+
 .email-button {
-    display: block;
-    width: 100%;
-    background-color: #28a745;
+    background-color: #4CAF50;
     color: white;
-    text-align: center;
-    padding: 12px;
-    border-radius: 50px;
-    font-weight: bold;
+    padding: 0.6rem 1.2rem; /* Reduced padding for a smaller button */
+    border-radius: 5px;
     text-decoration: none;
-    margin-top: 20px;
-    transition: background-color 0.2s;
+    font-size: 0.9rem; /* Smaller font size */
+    transition: background-color 0.3s;
 }
 
 .email-button:hover {
-    background-color: #218838;
+    background-color: #388E3C;
 }
 
-.back-link {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: var(--primary-blue);
-    text-decoration: none;
-    font-weight: bold;
+.email-button .fas {
+    margin-right: 0.5rem;
 }
+
 .card-content {
     display: flex;
     justify-content: space-between;
@@ -248,4 +234,433 @@ body {
 
 .share-button:hover {
     color: #388E3C; /* Darker color on hover */
+}
+
+/* Style for all sections */
+.videos-section,
+.resources-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for section headings */
+h2 {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Optional: Style individual resource cards */
+.resource-card {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #555;
+    transition: transform 0.2s;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+}
+
+
+
+
+/* Back Link */
+.profile-back-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #002d62;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.profile-back-link:hover {
+    color: #68798d;
+}
+
+.profile-back-link .fas {
+    margin-right: 0.5rem;
+}
+
+/* Provider Profile Card */
+.provider-profile-card {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    gap: 1rem; /* Space between main info and sidebar */
+    position: relative;
+    background-size: 10px 40px; /* Adjust grid size as needed */
+    background-repeat: repeat;
+    background-position: top left;
+}
+
+.profile-main-info {
+    flex: 2; /* Takes up more space */
+    display: flex;
+    flex-wrap: wrap; /* Allow image and details to wrap */
+    gap: 1.5rem;
+}
+
+.profile-image-section {
+    text-align: center;
+}
+
+.profile-picture-lg {
+    width: 250px; /* Adjust this value for a larger picture */
+    height: 250px; /* Adjust this value to match the width */
+    object-fit: scale-down;
+    object-position: 10% ;
+}
+
+.profile-details-section {
+    flex-grow: 1; /* Allows details to take remaining space */
+}
+
+.profile-details-section h1 {
+    font-size: 2.2rem;
+    color: #002D62;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.organization-info {
+    display: flex;
+    align-items: center;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.organization-badge {
+    color: #FFD700; /* Gold color for badge */
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.profile-details-section .role {
+    font-size: 1.1rem;
+    color: #002D62;
+    margin-bottom: 1rem;
+}
+
+
+.academic-title {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: #666;
+}
+
+.academic-profile-link a {
+    color: #002D62;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.academic-profile-link a:hover {
+    color: #586c82;
+}
+
+.profile-actions-sidebar {
+    flex: 1; /* Takes up less space */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 280px; /* Ensure sidebar doesn't get too narrow */
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.action-button.primary {
+    background-color: #FFD700; /* Gold */
+}
+
+.action-button.primary:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px);
+}
+
+.action-button.secondary {
+    background-color: #FFD700; /* Gold */
+}
+
+.action-button.secondary:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px);
+}
+
+.action-button .button-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.action-button .button-arrow {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+
+/* Show Additional Numbers Toggle */
+.additional-numbers {
+    margin-top: 1rem;
+}
+
+.show-more-checkbox {
+    display: none; /* Hide the actual checkbox */
+}
+
+.show-more-label {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #FFD700; /* Gold for the label */
+    display: inline-flex;
+    align-items: center;
+}
+
+.show-more-label .fas {
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.show-more-checkbox:checked + .show-more-label .fas {
+    transform: rotate(180deg); /* Rotate arrow when checked */
+}
+
+.show-more-checkbox:checked ~ .hidden-numbers {
+    max-height: 100px; /* Adjust as needed to reveal content */
+    margin-top: 0.5rem;
+}
+/* Styling for the entire videos section */
+.videos-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Container for the list of video cards */
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Styling for each individual video card */
+.video-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-item h3 {
+    margin-top: 0;
+    color: #002D62; /* A professional blue color */
+    font-size: 1.2rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Styling for the video link and its icon */
+.video-link-text a {
+    display: flex;
+    align-items: center;
+    color: #f00000; /* A green color for the link */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.video-link-text a:hover {
+    text-decoration: underline;
+}
+
+.video-link-text .fab.fa-youtube {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Styling for the video description text */
+.video-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+/* Styling for the video link text */
+.video-link-text a {
+    display: flex;
+    align-items: center;
+    color: #444; /* A dark gray color for the link text */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.video-link-text a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the YouTube icon specifically */
+.video-link-text .fab.fa-youtube {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    color: #FF0000; /* Standard red for the YouTube icon */
+}
+
+/* Container for the resources section */
+.resources-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Individual resource card styling */
+.resource-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the icon on the left */
+.resource-icon {
+    font-size: 2rem;
+    color: #4CAF50; /* A color to match your other elements */
+}
+
+/* Styling for the text content */
+.resource-info {
+    flex-grow: 1; /* Allows text to fill remaining space */
+}
+
+.resource-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #002D62; /* A professional blue color for the title */
+}
+
+.resource-info p {
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    color: #666; /* Lighter color for the description */
+}
+.header-flex-container {
+    display: flex; /* Enables flexbox layout */
+    
+    gap: 2rem; /* Adds a fixed space between the items */
+}
+
+/* Optional: Adjust heading margin so it doesn't push the button */
+.header-flex-container h1 {
+    margin: 5px 0; /* Adjust as needed */
+}
+/* Styling for the video list */
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* This sets the space between each video item */
+    list-style-type: none;
+    counter-reset: video-counter;
+    padding: 0;
+    margin: 0;
+}
+
+.video-list li {
+    counter-increment: video-counter;
+    position: relative;
+    /* Remove the negative margin here */
+    margin-bottom: 0;
+}
+
+.video-list li::before {
+    font-weight: bold;
+    color: #002D62;
+    font-size: 1.1rem;
+    display: block;
+}
+
+/* Styling for each video item card */
+.video-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Styling for the info block inside the card */
+.video-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.video-info .fab.fa-youtube {
+    color: #FF0000;
+    font-size: 1.5rem;
+}
+
+.video-info p {
+    margin: 0;
+    color: #444;
 }
