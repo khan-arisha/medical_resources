@@ -53,6 +53,22 @@ body {
     border-bottom: 2px solid var(--primary-blue);
 }
 
+.header-content-wrapper {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.header-title {
+    flex-shrink: 1; 
+    max-width: 99%; 
+}
+
+.header-actions {
+    flex-shrink: 0; 
+}
+
 /* Controls Section */
 .controls {
     display: flex;
@@ -85,6 +101,7 @@ body {
 .add-condition-button:hover {
     background-color: #024b80;
 }
+
 
 /* Conditions List Cards */
 .conditions-list {
